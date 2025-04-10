@@ -70,7 +70,7 @@ const NotFoundPage = () => {
           </Link>
           
           <button
-            onClick={() => window.history.back()}
+            onClick={() => {window.history.back() , window.scrollTo(0, 0)}}
             className="px-6 py-3 bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 rounded-lg font-medium transition duration-300 shadow-sm hover:shadow-md"
           >
             Return to previous page

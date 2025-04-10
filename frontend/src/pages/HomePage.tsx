@@ -2,6 +2,7 @@ import { BsGooglePlay } from 'react-icons/bs';
 import { IoLogoApple } from 'react-icons/io';
 import car from "../assets/car.png";
 import SearchHome from '../components/SearchHome';
+import Title from '../components/Title';
 
 const HomePage = () => {
   return (
@@ -57,6 +58,7 @@ const HomePage = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-16 lg:-mt-24 mb-12 relative z-10">
         <SearchHome />
       </div>
+      <Title text1="How it works" text2='justify-center'/>
     </div>
   );
 };

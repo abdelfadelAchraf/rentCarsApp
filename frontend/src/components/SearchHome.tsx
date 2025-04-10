@@ -4,9 +4,8 @@ import { MdOutlineDateRange } from 'react-icons/md';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-type Props = {};
 
-const SearchHome = (props: Props) => {
+const SearchHome = () => {
   const [location, setLocation] = useState('');
   const [pickupDate, setPickupDate] = useState<Date | null>(null);
   const [returnDate, setReturnDate] = useState<Date | null>(null);
@@ -18,9 +17,9 @@ const SearchHome = (props: Props) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-8">
+    <div className="max-w-4xl mx-auto my-8 flex flex-col items-center justify-center ">
       <form onSubmit={handleSearch}>
-        <fieldset className="border-0 p-0 m-0">
+        <fieldset className="border-0 p-0 m-0 ">
           <legend className="flex flex-col md:flex-row justify-between items-stretch gap-4 p-6 bg-white rounded-lg shadow-lg">
             {/* Location Input */}
             <div className="flex items-center gap-3 flex-1 border-b md:border-b-0 md:border-r border-gray-200 pb-4 md:pb-0 md:pr-4">
