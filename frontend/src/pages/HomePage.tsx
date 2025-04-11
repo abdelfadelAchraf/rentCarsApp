@@ -1,9 +1,52 @@
 import { BsGooglePlay } from 'react-icons/bs';
 import { IoLogoApple } from 'react-icons/io';
 import car from "../assets/car.png";
+import car1 from "../assets/car1.png";
 import SearchHome from '../components/SearchHome';
-import Title from '../components/Title';
+import ProcessSteps from '../components/ProcessSteps';
+import { FaCar, FaClock, FaDollarSign, FaHeadset, FaKey, FaLocationDot, FaUserTie } from 'react-icons/fa6';
+// import BrandCarousel from '../components/BrandCarousel';
 
+const defaultSteps = [
+  {
+    icon: <FaLocationDot />,
+    title: 'Choose Location',
+    description: 'Select from our various pickup locations',
+  },
+  {
+    icon: <FaKey />,
+    title: 'Pick Your Car',
+    description: 'Choose from our premium selection of vehicles',
+  },
+  {
+    icon: <FaCar />,
+    title: 'Enjoy Your Ride',
+    description: 'Hit the road with our easy rental process',
+  },
+];
+
+export const newSteps = [
+  {
+    icon: <FaDollarSign />,
+    title: "Best price guaranteed",
+    description: "Find a lower price? We’ll refund you 100% of the difference."
+  },
+  {
+    icon: <FaUserTie />,
+    title: "Experience driver",
+    description: "Don’t have driver? Don’t worry, we have many experienced driver for you."
+  },
+  {
+    icon: <FaClock />,
+    title: "24 hour car delivery",
+    description: "Book your car anytime and we will deliver it directly to you."
+  },
+  {
+    icon: <FaHeadset />,
+    title: "24/7 technical support",
+    description: "Have a question? Contact Rentcars support any time when you have problem."
+  }
+];
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -55,10 +98,23 @@ const HomePage = () => {
       </div>
 
       {/* Search Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-16 lg:-mt-24 mb-12 relative z-10">
+      <div className="container mx-auto  px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-16 lg:-mt-24 mb-12 relative z-10">
         <SearchHome />
       </div>
-      <Title text1="How it works" text2='justify-center'/>
+      <ProcessSteps subtitle="How it works"defaultSteps={defaultSteps}  className='justify-center items-center flex-col' className2='grid grid-cols-1' className3='flex-col' />
+
+      
+      {/* <BrandCarousel className='overflow-x-hidden'/> */}
+
+ <hr />
+<div className='flex flex-row gap-3 items-center justify-center'>
+  <div>
+    <img src={car1} alt=""  className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl object-contain transform hover:scale-105 transition-transform duration-500"/>
+  </div>
+  <div className='px-4'>
+  <ProcessSteps subtitle="Why choose us" defaultSteps={newSteps} title={`We offer the best experience `} textBreak=' with our rental deals' className='flex-col items-start' className2=' flex flex-col w-full' className3='flex-row' className4='flex flex-col items-start gap-2'/>
+  </div>
+</div>
     </div>
   );
 };
