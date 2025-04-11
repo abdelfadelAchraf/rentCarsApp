@@ -5,6 +5,7 @@ import car1 from "../assets/car1.png";
 import SearchHome from '../components/SearchHome';
 import ProcessSteps from '../components/ProcessSteps';
 import { FaCar, FaClock, FaDollarSign, FaHeadset, FaKey, FaLocationDot, FaUserTie } from 'react-icons/fa6';
+import PopularCarRentalDeals from '../components/PopularCarRentalDeals';
 // import BrandCarousel from '../components/BrandCarousel';
 
 const defaultSteps = [
@@ -106,15 +107,31 @@ const HomePage = () => {
       
       {/* <BrandCarousel className='overflow-x-hidden'/> */}
 
- <hr />
-<div className='flex flex-row gap-3 items-center justify-center'>
-  <div>
-    <img src={car1} alt=""  className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl object-contain transform hover:scale-105 transition-transform duration-500"/>
+      <hr className='border-t border-gray-200 my-6' />
+<div className='flex flex-col sm:flex-col md:flex-col lg:flex-row gap-6 items-center justify-center'>
+  <div className='w-full'>
+    <img 
+      src={car1} 
+      alt="Car image"  
+      className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl object-contain transform hover:scale-105 transition-transform duration-500"
+    />
   </div>
   <div className='px-4'>
-  <ProcessSteps subtitle="Why choose us" defaultSteps={newSteps} title={`We offer the best experience `} textBreak=' with our rental deals' className='flex-col items-start' className2=' flex flex-col w-full' className3='flex-row' className4='flex flex-col items-start gap-2'/>
+    <ProcessSteps 
+      subtitle="Why choose us" 
+      defaultSteps={newSteps} 
+      title="We offer the best experience"
+      textBreak=" with our rental deals" 
+      className='flex flex-col items-start'
+      className2='flex flex-col w-full'
+      className3='flex flex-row' 
+      className4='flex flex-col items-start gap-2' 
+    />
   </div>
 </div>
+
+
+<PopularCarRentalDeals/>
     </div>
   );
 };
